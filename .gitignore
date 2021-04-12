@@ -1,0 +1,16 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/WookieBooks.API
+/WookieBooks.API/bin/Debug/netcoreapp2.2
+/WookieBooks.API/obj
+/WookieBooks.API/WookieBooks.API.csproj.user
+/WookieBooks.DTO/bin/Debug/netcoreapp2.2
+/WookieBooks.DTO/obj
+/WookieBooks.Repository/bin/Debug/netcoreapp2.2
+/WookieBooks.Repository/obj
+/WookieBooks.Service/bin/Debug/netcoreapp2.2
+/WookieBooks.Service/obj
+/WookieBooks.Utility/bin/Debug/netcoreapp2.2
+/WookieBooks.Utility/obj

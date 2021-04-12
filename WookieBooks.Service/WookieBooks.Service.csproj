@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WookieBooks.DTO\WookieBooks.DTO.csproj" />
+    <ProjectReference Include="..\WookieBooks.Repository\WookieBooks.Repository.csproj" />
+    <ProjectReference Include="..\WookieBooks.Utility\WookieBooks.Utility.csproj" />
+  </ItemGroup>
+
+</Project>
