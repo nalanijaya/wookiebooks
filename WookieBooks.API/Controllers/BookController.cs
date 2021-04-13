@@ -4,43 +4,174 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using WookieBooks.DTO;
+using WookieBooks.Service;
+
 
 namespace WookieBooks.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Produces("application/json")]
     public class BookController : ControllerBase
     {
-        // GET: api/Book
-        [HttpGet]
-        public IEnumerable<string> Get()
+        #region Private Properties
+        private readonly IBookService _bookService;
+        private readonly ILogger _logger;
+        #endregion
+
+        #region Constructor
+        public BookController(IBookService bookService, ILogger<BookController> logger)
         {
-            return new string[] { "value1", "value2" };
+            _bookService = bookService;
+            _logger = logger;
+        }
+        #endregion
+
+        [HttpGet("all-books")]
+        public async Task<IActionResult> Get()
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    var result = await _bookService.GetAllBook();
+                    if (result != null)
+                    {
+                        return StatusCode(StatusCodes.Status200OK, result);
+                    }
+                    else
+                    {
+                        return StatusCode(StatusCodes.Status204NoContent);
+                    }
+                }
+                else
+                {
+                    return BadRequest(modelState: ModelState);
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.StackTrace);
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.StackTrace);
+            }
         }
 
-        // GET: api/Book/5
-        [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
+        [HttpGet("{bookId}")]
+        public async Task<IActionResult> Get(int bookId)
         {
-            return "value";
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    var result = await _bookService.GetBookById(bookId);
+                    if (result != null)
+                    {
+                        return StatusCode(StatusCodes.Status200OK, result);
+                    }
+                    else
+                    {
+                        return StatusCode(StatusCodes.Status204NoContent);
+                    }
+                }
+                else
+                {
+                    return BadRequest(modelState: ModelState);
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.StackTrace);
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.StackTrace);
+            }
         }
 
-        // POST: api/Book
-        [HttpPost]
-        public void Post([FromBody] string value)
+        [HttpPost("create-book")]
+        public async Task<IActionResult> Post([FromBody] Book book)
         {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    var result = await _bookService.AddBook(book);
+                    if (result != null)
+                    {
+                        return StatusCode(StatusCodes.Status200OK, result);
+                    }
+                    else
+                    {
+                        return StatusCode(StatusCodes.Status204NoContent);
+                    }
+                }
+                else
+                {
+                    return BadRequest(modelState: ModelState);
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.StackTrace);
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.StackTrace);
+            }
         }
 
-        // PUT: api/Book/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [HttpPost("remove-book/{id}")]
+        public async Task<IActionResult> RemoveBook(int id)
         {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    var result = await _bookService.DeleteBookById(id);
+                    if (result != null)
+                    {
+                        return StatusCode(StatusCodes.Status200OK, result);
+                    }
+                    else
+                    {
+                        return StatusCode(StatusCodes.Status204NoContent);
+                    }
+                }
+                else
+                {
+                    return BadRequest(modelState: ModelState);
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.StackTrace);
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.StackTrace);
+            }
         }
 
-        // DELETE: api/ApiWithActions/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        [HttpPost("update-book")]
+        public async Task<IActionResult> UpdateBook([FromBody] Book book)
         {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    var result = await _bookService.UpdateBook(book);
+                    if (result != null)
+                    {
+                        return StatusCode(StatusCodes.Status200OK, result);
+                    }
+                    else
+                    {
+                        return StatusCode(StatusCodes.Status204NoContent);
+                    }
+                }
+                else
+                {
+                    return BadRequest(modelState: ModelState);
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.StackTrace);
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.StackTrace);
+            }
         }
     }
 }

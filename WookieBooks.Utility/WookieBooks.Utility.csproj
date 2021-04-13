@@ -14,7 +14,7 @@
 
   <ItemGroup>
     <EmbeddedResource Update="Properties\wb-resource.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>wb-resource.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>

@@ -59,7 +59,7 @@ namespace WookieBooks.Utility.Properties {
                 resourceCulture = value;
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Book Save Error.
         /// </summary>
@@ -68,7 +68,7 @@ namespace WookieBooks.Utility.Properties {
                 return ResourceManager.GetString("WB001", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Book Delete Error.
         /// </summary>
@@ -77,7 +77,7 @@ namespace WookieBooks.Utility.Properties {
                 return ResourceManager.GetString("WB002", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to All Books Retrieve Error.
         /// </summary>
@@ -86,7 +86,7 @@ namespace WookieBooks.Utility.Properties {
                 return ResourceManager.GetString("WB003", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Book Retrieve Error.
         /// </summary>
@@ -95,13 +95,31 @@ namespace WookieBooks.Utility.Properties {
                 return ResourceManager.GetString("WB004", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Book Update Error.
         /// </summary>
         public static string WB005 {
             get {
                 return ResourceManager.GetString("WB005", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please Fill Required Data.
+        /// </summary>
+        public static string WB006 {
+            get {
+                return ResourceManager.GetString("WB006", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error Occurred.
+        /// </summary>
+        public static string WB007 {
+            get {
+                return ResourceManager.GetString("WB007", resourceCulture);
             }
         }
     }

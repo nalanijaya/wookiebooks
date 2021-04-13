@@ -10,6 +10,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using WookieBooks.Repository;
+using WookieBooks.Service;
 
 namespace WookieBooks.API
 {
@@ -26,6 +28,13 @@ namespace WookieBooks.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            //Inject depencecies - services and repositories
+            #region Service Injection
+
+            services.AddScoped<IBookRepository, BookRepository>();
+            services.AddScoped<IBookService, BookService>();
+            #endregion
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -43,6 +52,7 @@ namespace WookieBooks.API
 
             app.UseHttpsRedirection();
             app.UseMvc();
+
         }
     }
 }

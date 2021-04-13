@@ -28,7 +28,7 @@ namespace WookieBooks.Repository
                 },
                  new Book()
                 {
-                    Id=1,
+                    Id=2,
                     Title="Test Book 2",
                     Description="Test Book 2 Description",
                     Author="Test Book 2 Author",
@@ -58,7 +58,7 @@ namespace WookieBooks.Repository
             Book book = new Book();
             try
             {
-                var existingItem = _books.Where(item => item.Id == id).FirstOrDefault();
+                var existingItem = _books.Where(item => item.Id == id && item.IsActive).FirstOrDefault();
 
                 if (existingItem != null)
                 {
@@ -80,7 +80,7 @@ namespace WookieBooks.Repository
             Book book = new Book();
             try
             {
-                var item = _books.Where(im => im.Id == id).FirstOrDefault();
+                var item = _books.Where(im => im.Id == id && im.IsActive).FirstOrDefault();
 
                 if (item != null)
                 {
@@ -98,7 +98,7 @@ namespace WookieBooks.Repository
 
         public async Task<IEnumerable<Book>> GetAll()
         {
-            return _books;
+            return _books.Where(im => im.IsActive);
         }
 
         public async Task<Book> Update(Book entity)
@@ -106,7 +106,7 @@ namespace WookieBooks.Repository
             Book book = new Book();
             try
             {
-                book = _books.Where(item => item.Id == entity.Id).FirstOrDefault();
+                book = _books.Where(item => item.Id == entity.Id && item.IsActive).FirstOrDefault();
 
                 if (book != null)
                 {

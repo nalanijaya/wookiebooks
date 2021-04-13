@@ -132,4 +132,10 @@
   <data name="WB005" xml:space="preserve">
     <value>Book Update Error</value>
   </data>
+  <data name="WB006" xml:space="preserve">
+    <value>Please Fill Required Data</value>
+  </data>
+  <data name="WB007" xml:space="preserve">
+    <value>Error Occurred</value>
+  </data>
 </root>
