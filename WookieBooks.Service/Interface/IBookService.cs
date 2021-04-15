@@ -4,6 +4,9 @@ using WookieBooks.DTO;
 
 namespace WookieBooks.Service
 {
+    /// <summary>
+    /// Book service interface
+    /// </summary>
     public interface IBookService
     {
         Task<Response<Book>> AddBook(Book book);

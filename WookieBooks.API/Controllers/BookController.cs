@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -29,6 +27,12 @@ namespace WookieBooks.API.Controllers
         }
         #endregion
 
+        #region Methods
+
+        /// <summary>
+        /// Get all books
+        /// </summary>
+        /// <returns>All books</returns>
         [HttpGet("all-books")]
         public async Task<IActionResult> Get()
         {
@@ -58,6 +62,11 @@ namespace WookieBooks.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Get book by id
+        /// </summary>
+        /// <param name="bookId">Book Id</param>
+        /// <returns>Book that matches the id</returns>
         [HttpGet("{bookId}")]
         public async Task<IActionResult> Get(int bookId)
         {
@@ -87,6 +96,11 @@ namespace WookieBooks.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Create book
+        /// </summary>
+        /// <param name="book">Book data</param>
+        /// <returns>Created book</returns>
         [HttpPost("create-book")]
         public async Task<IActionResult> Post([FromBody] Book book)
         {
@@ -116,7 +130,12 @@ namespace WookieBooks.API.Controllers
             }
         }
 
-        [HttpPost("remove-book/{id}")]
+        /// <summary>
+        /// Remove book using id
+        /// </summary>
+        /// <param name="id">Book Id</param>
+        /// <returns>Removed book</returns>
+        [HttpGet("remove-book/{id}")]
         public async Task<IActionResult> RemoveBook(int id)
         {
             try
@@ -145,6 +164,11 @@ namespace WookieBooks.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Update book
+        /// </summary>
+        /// <param name="book">Book with updated values</param>
+        /// <returns>Updated book</returns>
         [HttpPost("update-book")]
         public async Task<IActionResult> UpdateBook([FromBody] Book book)
         {
@@ -173,5 +197,7 @@ namespace WookieBooks.API.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, ex.StackTrace);
             }
         }
+
+        #endregion
     }
 }

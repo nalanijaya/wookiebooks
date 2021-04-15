@@ -138,4 +138,19 @@
   <data name="WB007" xml:space="preserve">
     <value>Error Occurred</value>
   </data>
+  <data name="WB008" xml:space="preserve">
+    <value>Data Retrieve Success</value>
+  </data>
+  <data name="WB009" xml:space="preserve">
+    <value>Data Save Success</value>
+  </data>
+  <data name="WB010" xml:space="preserve">
+    <value>Data Delete Success</value>
+  </data>
+  <data name="WB011" xml:space="preserve">
+    <value>No Item Exists</value>
+  </data>
+  <data name="WB012" xml:space="preserve">
+    <value>Item Already Exists With Same Id</value>
+  </data>
 </root>

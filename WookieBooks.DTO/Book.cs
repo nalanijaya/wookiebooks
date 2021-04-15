@@ -15,7 +15,7 @@ namespace WookieBooks.DTO
         public string Author { get; set; }
         public string CoverImage { get; set; }
         [Required]
-        public decimal Price { get; set; }
+        public string Price { get; set; }
         public bool IsActive { get; set; }
 
         #endregion

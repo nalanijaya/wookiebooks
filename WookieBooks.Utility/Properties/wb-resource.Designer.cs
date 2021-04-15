@@ -122,5 +122,50 @@ namespace WookieBooks.Utility.Properties {
                 return ResourceManager.GetString("WB007", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Data Retrieve Success.
+        /// </summary>
+        public static string WB008 {
+            get {
+                return ResourceManager.GetString("WB008", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Data Save Success.
+        /// </summary>
+        public static string WB009 {
+            get {
+                return ResourceManager.GetString("WB009", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Data Delete Success.
+        /// </summary>
+        public static string WB010 {
+            get {
+                return ResourceManager.GetString("WB010", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No Item Exists.
+        /// </summary>
+        public static string WB011 {
+            get {
+                return ResourceManager.GetString("WB011", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Item Already Exists With Same Id.
+        /// </summary>
+        public static string WB012 {
+            get {
+                return ResourceManager.GetString("WB012", resourceCulture);
+            }
+        }
     }
 }

@@ -6,7 +6,6 @@ namespace WookieBooks.DTO
     {
         public string Message { get; set; }
         public string MessageCode { get; set; }
-        public bool Validity { get; }
         public T ResultData { get; set; }
         public List<ErrorInfo> ErrorList { get; set; }
     }

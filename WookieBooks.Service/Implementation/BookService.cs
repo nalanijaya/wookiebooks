@@ -4,22 +4,29 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using WookieBooks.DTO;
 using WookieBooks.Repository;
-using WookieBooks.Utility;
 using WookieBooks.Utility.Properties;
 
 namespace WookieBooks.Service
 {
+    /// <summary>
+    /// Book service which contains book CRUD operations
+    /// </summary>
     public class BookService : IBookService
     {
+        #region Private Properties
         private readonly IBookRepository _bookRepository;
         private readonly ILogger _logger;
+        #endregion
 
+        #region Conctructor
         public BookService(IBookRepository bookRepository, ILogger<BookService> logger)
         {
             _bookRepository = bookRepository;
             _logger = logger;
         }
+        #endregion
 
+        #region Public Methods
         public async Task<Response<Book>> AddBook(Book book)
         {
             Response<Book> result = new Response<Book>();
@@ -29,6 +36,16 @@ namespace WookieBooks.Service
                 var addedBook = await _bookRepository.Add(book);
                 result.ResultData = addedBook;
 
+                if (result.ResultData != null)
+                {
+                    result.MessageCode = "WB009";
+                    result.Message = wb_resource.WB009;
+                }
+                else
+                {
+                    result.MessageCode = "WB012";
+                    result.Message = wb_resource.WB012;
+                }
             }
             catch (Exception ex)
             {
@@ -52,6 +69,16 @@ namespace WookieBooks.Service
                 var deletedItem = await _bookRepository.Delete(id);
                 result.ResultData = deletedItem;
 
+                if (result.ResultData != null)
+                {
+                    result.MessageCode = "WB010";
+                    result.Message = wb_resource.WB010;
+                }
+                else
+                {
+                    result.MessageCode = "WB011";
+                    result.Message = wb_resource.WB011;
+                }
             }
             catch (Exception ex)
             {
@@ -75,6 +102,11 @@ namespace WookieBooks.Service
                 var allItems = await _bookRepository.GetAll();
                 result.ResultData = allItems;
 
+                if (result.ResultData != null)
+                {
+                    result.MessageCode = "WB008";
+                    result.Message = wb_resource.WB008;
+                }
             }
             catch (Exception ex)
             {
@@ -98,6 +130,17 @@ namespace WookieBooks.Service
                 var exisitingItem = await _bookRepository.Get(id);
                 result.ResultData = exisitingItem;
 
+
+                if (result.ResultData != null)
+                {
+                    result.MessageCode = "WB008";
+                    result.Message = wb_resource.WB008;
+                }
+                else
+                {
+                    result.MessageCode = "WB011";
+                    result.Message = wb_resource.WB011;
+                }
             }
             catch (Exception ex)
             {
@@ -121,6 +164,16 @@ namespace WookieBooks.Service
                 var updatedItem = await _bookRepository.Update(entity);
                 result.ResultData = updatedItem;
 
+                if (result.ResultData != null)
+                {
+                    result.MessageCode = "WB009";
+                    result.Message = wb_resource.WB009;
+                }
+                else
+                {
+                    result.MessageCode = "WB011";
+                    result.Message = wb_resource.WB011;
+                }
             }
             catch (Exception ex)
             {
@@ -134,5 +187,6 @@ namespace WookieBooks.Service
 
             return result;
         }
+        #endregion
     }
 }
