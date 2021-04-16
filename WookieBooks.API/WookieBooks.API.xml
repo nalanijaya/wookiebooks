@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WookieBooks.API</name>
+    </assembly>
+    <members>
+        <member name="M:WookieBooks.API.Controllers.BookController.Get">
+            <summary>
+            Get all books
+            </summary>
+            <returns>All books</returns>
+        </member>
+        <member name="M:WookieBooks.API.Controllers.BookController.Get(System.Int32)">
+            <summary>
+            Get book by id
+            </summary>
+            <param name="bookId">Book Id</param>
+            <returns>Book that matches the id</returns>
+        </member>
+        <member name="M:WookieBooks.API.Controllers.BookController.Post(WookieBooks.DTO.Book)">
+            <summary>
+            Create book
+            </summary>
+            <param name="book">Book data</param>
+            <returns>Created book</returns>
+        </member>
+        <member name="M:WookieBooks.API.Controllers.BookController.RemoveBook(System.Int32)">
+            <summary>
+            Remove book using id
+            </summary>
+            <param name="id">Book Id</param>
+            <returns>Removed book</returns>
+        </member>
+        <member name="M:WookieBooks.API.Controllers.BookController.UpdateBook(WookieBooks.DTO.Book)">
+            <summary>
+            Update book
+            </summary>
+            <param name="book">Book with updated values</param>
+            <returns>Updated book</returns>
+        </member>
+    </members>
+</doc>

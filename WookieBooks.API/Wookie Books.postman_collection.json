@@ -1,0 +1,473 @@
+{
+	"info": {
+		"_postman_id": "37024c29-3c7e-432f-8f56-7aaf6600f63f",
+		"name": "Wookie Books",
+		"description": "This postman collection will include API testing for Wookie Books end points. ",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "https://localhost:5001/api/book/all-books",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response must be valid and have a body\", function () {\r",
+							"     pm.response.to.be.ok;\r",
+							"     pm.response.to.be.withBody;\r",
+							"     pm.response.to.be.json;\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/api/book/all-books",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"book",
+						"all-books"
+					]
+				},
+				"description": "To retrieve all books in the book store,"
+			},
+			"response": [
+				{
+					"name": "https://localhost:5001/api/book/all-books",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5001/api/book/all-books",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"book",
+								"all-books"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 15 Apr 2021 09:34:06 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Data Retrieve Success\",\n    \"messageCode\": \"WB008\",\n    \"resultData\": [\n        {\n            \"id\": 1,\n            \"title\": \"Test Book 1\",\n            \"description\": \"Test Book 1 Description\",\n            \"author\": \"Test Book 1 Author\",\n            \"coverImage\": \"Test Book 1 Cover Image\",\n            \"price\": \"34$\",\n            \"isActive\": true\n        },\n        {\n            \"id\": 2,\n            \"title\": \"Test Book 2\",\n            \"description\": \"Test Book 2 Description\",\n            \"author\": \"Test Book 2 Author\",\n            \"coverImage\": \"Test Book 2 Cover Image\",\n            \"price\": \"35$\",\n            \"isActive\": true\n        }\n    ],\n    \"errorList\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "https://localhost:5001/api/book/1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response must be valid and have a body\", function () {\r",
+							"     pm.response.to.be.ok;\r",
+							"     pm.response.to.be.withBody;\r",
+							"     pm.response.to.be.json;\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/api/book/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"book",
+						"1"
+					]
+				},
+				"description": "Retrieve a book by Id"
+			},
+			"response": [
+				{
+					"name": "https://localhost:5001/api/book/1",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5001/api/book/2",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"book",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 15 Apr 2021 09:51:14 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Data Retrieve Success\",\n    \"messageCode\": \"WB008\",\n    \"resultData\": {\n        \"id\": 2,\n        \"title\": \"Test Book 2\",\n        \"description\": \"Test Book 2 Description\",\n        \"author\": \"Test Book 2 Author\",\n        \"coverImage\": \"Test Book 2 Cover Image\",\n        \"price\": \"35$\",\n        \"isActive\": true\n    },\n    \"errorList\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "https://localhost:5001/api/book/create-book",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response must be valid and have a body\", function () {\r",
+							"     pm.response.to.be.ok;\r",
+							"     pm.response.to.be.withBody;\r",
+							"     pm.response.to.be.json;\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Id\": 3,\r\n    \"Title\": \"Test Book 3\",\r\n    \"Description\": \"Test Book 3 Description\",\r\n    \"Author\": \"Test Book 3 Author\",\r\n    \"CoverImage\": \"Test Book 3 Cover Image\",\r\n    \"IsActive\": true,\r\n    \"Price\": \"38$\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/api/book/create-book",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"book",
+						"create-book"
+					]
+				},
+				"description": "Create a book"
+			},
+			"response": [
+				{
+					"name": "https://localhost:5001/api/book/create-book",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Id\": 3,\r\n    \"Title\": \"Test Book 3\",\r\n    \"Description\": \"Test Book 3 Description\",\r\n    \"Author\": \"Test Book 3 Author\",\r\n    \"CoverImage\": \"Test Book 3 Cover Image\",\r\n    \"IsActive\": true,\r\n    \"Price\": \"38$\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:5001/api/book/create-book",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"book",
+								"create-book"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 15 Apr 2021 09:48:30 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Data Save Success\",\n    \"messageCode\": \"WB009\",\n    \"resultData\": {\n        \"id\": 3,\n        \"title\": \"Test Book 3\",\n        \"description\": \"Test Book 3 Description\",\n        \"author\": \"Test Book 3 Author\",\n        \"coverImage\": \"Test Book 3 Cover Image\",\n        \"price\": \"38$\",\n        \"isActive\": true\n    },\n    \"errorList\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "https://localhost:5001/api/book/remove-book/1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response must be valid and have a body\", function () {\r",
+							"     pm.response.to.be.ok;\r",
+							"     pm.response.to.be.withBody;\r",
+							"     pm.response.to.be.json;\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/api/book/remove-book/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"book",
+						"remove-book",
+						"1"
+					]
+				},
+				"description": "Remove a book by its id"
+			},
+			"response": [
+				{
+					"name": "https://localhost:5001/api/book/remove-book/1",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5001/api/book/remove-book/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"book",
+								"remove-book",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 15 Apr 2021 09:55:17 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Data Delete Success\",\n    \"messageCode\": \"WB010\",\n    \"resultData\": {\n        \"id\": 1,\n        \"title\": \"Test Book 1\",\n        \"description\": \"Test Book 1 Description\",\n        \"author\": \"Test Book 1 Author\",\n        \"coverImage\": \"Test Book 1 Cover Image\",\n        \"price\": \"34$\",\n        \"isActive\": false\n    },\n    \"errorList\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "https://localhost:5001/api/book/update-book",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response must be valid and have a body\", function () {\r",
+							"     pm.response.to.be.ok;\r",
+							"     pm.response.to.be.withBody;\r",
+							"     pm.response.to.be.json;\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 2,\r\n    \"title\": \"Test Book 2 Updated\",\r\n    \"description\": \"Test Book 2 Description Updated\",\r\n    \"author\": \"Test Book 2 Author\",\r\n    \"coverImage\": \"Test Book 2 Cover Image\",\r\n    \"price\": \"35$\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/api/book/update-book",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"book",
+						"update-book"
+					]
+				},
+				"description": "Update Title, Description, Cover Image or Price of a book"
+			},
+			"response": [
+				{
+					"name": "https://localhost:5001/api/book/update-book",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 2,\r\n    \"title\": \"Test Book 2 Updated\",\r\n    \"description\": \"Test Book 2 Description Updated\",\r\n    \"author\": \"Test Book 2 Author\",\r\n    \"coverImage\": \"Test Book 2 Cover Image\",\r\n    \"price\": \"35$\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:5001/api/book/update-book",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"book",
+								"update-book"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 15 Apr 2021 10:00:20 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Data Save Success\",\n    \"messageCode\": \"WB009\",\n    \"resultData\": {\n        \"id\": 2,\n        \"title\": \"Test Book 2 Updated\",\n        \"description\": \"Test Book 2 Description Updated\",\n        \"author\": \"Test Book 2 Author\",\n        \"coverImage\": \"Test Book 2 Cover Image\",\n        \"price\": \"35$\",\n        \"isActive\": true\n    },\n    \"errorList\": null\n}"
+				}
+			]
+		}
+	]
+}

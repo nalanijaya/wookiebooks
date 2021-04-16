@@ -3,6 +3,11 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+    <UserSecretsId>5f80a227-fa6b-4775-9753-e22a913903d0</UserSecretsId>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>E:\Savvyy\wookiebooks\WookieBooks.API\WookieBooks.API.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

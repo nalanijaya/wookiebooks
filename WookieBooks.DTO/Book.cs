@@ -5,7 +5,7 @@ namespace WookieBooks.DTO
     public class Book
     {
         #region Public Property
-
+        [Required]
         public int Id { get; set; }
         [Required]
         public string Title { get; set; }
