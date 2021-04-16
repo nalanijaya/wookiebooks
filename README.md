@@ -1,5 +1,7 @@
 # Wookie Books REST API
 
+Wookie books REST API was implemented using .net core 2.2 and Visual Studio 2017. This enables swagger and postman testing. The docker build had some issues with nuget.
+
 1. For POSTMAN end point testing, export Wookie Books.postman_collection.json file located in WookieBooks.API folder.
 
 ![image](https://user-images.githubusercontent.com/13043726/115060629-baa59a00-9f05-11eb-90e8-0f9a12596d2b.png)
