@@ -18,3 +18,8 @@ At the moment I am sending the link to the repository, I was in the middle of tr
 
 ![image](https://user-images.githubusercontent.com/13043726/115061036-3ef81d00-9f06-11eb-92bf-b0707384436d.png)
 
+# References
+1. https://timdeschryver.dev/blog/how-to-test-your-csharp-web-api
+2. https://learning.postman.com/docs/writing-scripts/test-scripts/
+3. https://thegreenerman.medium.com/set-up-https-on-local-with-net-core-and-docker-7a41f030fc76
+4. https://github.com/microsoft/artifacts-credprovider/issues/63
