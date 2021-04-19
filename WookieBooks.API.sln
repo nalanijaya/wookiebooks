@@ -5,13 +5,15 @@ VisualStudioVersion = 15.0.28307.1000
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WookieBooks.API", "WookieBooks.API\WookieBooks.API.csproj", "{B87177D6-7BBE-4B8B-8BCB-FEB0D3247ACF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WookieBooks.Repository", "WookieBooks.Repository\WookieBooks.Repository.csproj", "{45D225D0-B3D0-4EC2-895D-1ADBDA77A1F5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WookieBooks.Repository", "WookieBooks.Repository\WookieBooks.Repository.csproj", "{45D225D0-B3D0-4EC2-895D-1ADBDA77A1F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WookieBooks.DTO", "WookieBooks.DTO\WookieBooks.DTO.csproj", "{1773A2AF-F639-452B-8B60-4B6080B83555}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WookieBooks.DTO", "WookieBooks.DTO\WookieBooks.DTO.csproj", "{1773A2AF-F639-452B-8B60-4B6080B83555}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WookieBooks.Service", "WookieBooks.Service\WookieBooks.Service.csproj", "{20122CE0-1670-4DE8-A7E9-5B5A3A9D8FE8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WookieBooks.Service", "WookieBooks.Service\WookieBooks.Service.csproj", "{20122CE0-1670-4DE8-A7E9-5B5A3A9D8FE8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WookieBooks.Utility", "WookieBooks.Utility\WookieBooks.Utility.csproj", "{81758E4C-4295-4DE7-8330-F8D048FAFF51}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WookieBooks.Utility", "WookieBooks.Utility\WookieBooks.Utility.csproj", "{81758E4C-4295-4DE7-8330-F8D048FAFF51}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{C8578866-5E28-4AF5-BDF8-19EC17C4E483}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{81758E4C-4295-4DE7-8330-F8D048FAFF51}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{81758E4C-4295-4DE7-8330-F8D048FAFF51}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{81758E4C-4295-4DE7-8330-F8D048FAFF51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8578866-5E28-4AF5-BDF8-19EC17C4E483}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8578866-5E28-4AF5-BDF8-19EC17C4E483}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8578866-5E28-4AF5-BDF8-19EC17C4E483}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8578866-5E28-4AF5-BDF8-19EC17C4E483}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

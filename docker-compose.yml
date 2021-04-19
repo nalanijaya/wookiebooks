@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  wookiebooks.api:
+    image: ${DOCKER_REGISTRY-}wookiebooksapi
+    build:
+      context: .
+      dockerfile: WookieBooks.API/Dockerfile

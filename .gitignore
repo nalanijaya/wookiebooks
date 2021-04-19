@@ -14,3 +14,6 @@
 /WookieBooks.Service/obj
 /WookieBooks.Utility/bin/Debug/netcoreapp2.2
 /WookieBooks.Utility/obj
+/bin/Debug
+/obj
+/.vs/config
