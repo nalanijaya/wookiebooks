@@ -21,9 +21,9 @@ I had the following error in my docker build at the time I was sending the repo 
 I was able to fix it using added docker-compose.yml file. Now the project can run on docker as well.
 I have pushed the image to docker hub.
 
-Commands:
-docker pull nalani2020/wookie-books:wookiebooks.api.1.0
-docker run -d -p 49460:80 --name wookiebooks nalani2020/wookie-books:wookiebooks.api.1.0
+# Commands:
+1. docker pull nalani2020/wookie-books:wookiebooks.api.1.0
+2. docker run -d -p 49460:80 --name wookiebooks nalani2020/wookie-books:wookiebooks.api.1.0
 
 
 # References
